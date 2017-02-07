@@ -52,14 +52,14 @@ pub fn printout_password(length: &usize, amount: &usize)
     }
 }
 
-
+#[cfg(test)]
 mod test
 {
     #[test]
     fn bounds_test()
     {
-        let length = 1000;
-        let amount = 1000;
+        let length = 10;
+        let amount = 10;
         let mut passwords = super::create_package(&length, &amount);
         //tests are bugged atm, .len() does not return the correct value
         assert_eq!(passwords.len(), amount);
